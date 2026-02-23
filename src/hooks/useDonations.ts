@@ -29,6 +29,17 @@ export function useDonors() {
         fetchDonors();
     }, [fetchDonors]);
 
+    useEffect(() => {
+        const handleDonationCompleted = () => {
+            fetchDonors();
+        };
+
+        window.addEventListener('donation-completed', handleDonationCompleted);
+        return () => {
+            window.removeEventListener('donation-completed', handleDonationCompleted);
+        };
+    }, [fetchDonors]);
+
     return { donors, isLoading, error, refetch: fetchDonors };
 }
 
@@ -90,6 +101,9 @@ export async function submitDonation(input: SubmitDonationInput): Promise<{
     if (updateError || !updated) {
         return { donation: null, error: updateError?.message ?? 'Update failed' };
     }
+
+    // 4. Dispatch custom event to notify listeners (e.g., SupporterList)
+    window.dispatchEvent(new CustomEvent('donation-completed'));
 
     return { donation: updated, error: null };
 }

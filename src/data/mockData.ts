@@ -181,7 +181,7 @@ export const parishInfo = {
   pec: 'parrocchiasangiovanni-meolo@pec.it',
   hours: 'Lun-Ven: 9:00-12:00 / 15:00-18:00',
   priest: 'Rev. Roberto Mistrorigo',
-  vicePriest: 'Don Andrea Rossi',
+  vicePriest: 'Don Michele Marcato',
   coordinates: {
     lat: 45.62163164844248,
     lng: 12.451641728923748,
