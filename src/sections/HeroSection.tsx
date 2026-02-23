@@ -82,7 +82,7 @@ export function HeroSection({ onDonateClick }: HeroSectionProps) {
 
           {/* Subtitle */}
           <p className="text-xl sm:text-2xl text-white/80 max-w-2xl mb-10 leading-relaxed">
-            Un luogo di fede, speranza e carità dal 1892.
+            Un luogo di fede, speranza e carità dal 1534.
             Ti invitiamo a partecipare alla nostra comunità parrocchiale.
           </p>
 

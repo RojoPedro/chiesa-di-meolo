@@ -112,7 +112,7 @@ export function ContattiSection() {
             {/* Map Placeholder */}
             <div className="rounded-2xl overflow-hidden bg-slate-100 aspect-video relative">
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796!2d${parishInfo.coordinates.lng}!3d${parishInfo.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzUxLjEiTiA5wrAxMScyNC4wIkU!5e0!3m2!1sit!2sit!4v1609459200000!5m2!1sit!2sit`}
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.223!2d${parishInfo.coordinates.lng}!3d${parishInfo.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47794da8381ced77%3A0x33b8a13a0e10f63a!2sChiesa%20arcipretale%20di%20San%20Giovanni%20Battista!5e0!3m2!1sit!2sit!4v1740317000000!5m2!1sit!2sit`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

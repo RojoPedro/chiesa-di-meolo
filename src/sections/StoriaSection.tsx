@@ -35,11 +35,11 @@ export function StoriaSection() {
             <span className="text-sm font-medium">La Nostra Storia</span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl text-slate-800 font-bold mb-6">
-            Un Secolo di Fede
+            Sei Secoli di Fede
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed">
-            Dalla fondazione nel 1892 ad oggi, la nostra parrocchia ha accompagnato 
-            generazioni di fedeli nella loro cammino spirituale.
+            Dalla fondazione nel 1534 ad oggi, la nostra parrocchia ha accompagnato
+            generazioni di fedeli nel loro cammino spirituale.
           </p>
         </div>
 
@@ -49,9 +49,8 @@ export function StoriaSection() {
             {historyEvents.map((event, index) => (
               <div
                 key={event.id}
-                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
+                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                  }`}
               >
                 {/* Image */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
@@ -92,10 +91,10 @@ export function StoriaSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="font-serif text-3xl text-slate-800 font-bold mb-4">
-              Galleria Fotografica
+              Galleria Storica
             </h3>
             <p className="text-slate-600">
-              Scopri la bellezza della nostra chiesa attraverso le immagini
+              Un tuffo nel passato grazie alle nostre fotografie tramandate di generazione in generazione.
             </p>
           </div>
 
@@ -104,14 +103,12 @@ export function StoriaSection() {
               <button
                 key={image.id}
                 onClick={() => openLightbox(index)}
-                className={`group relative overflow-hidden rounded-2xl ${
-                  index === 0 ? 'col-span-2 row-span-2' : ''
-                }`}
+                className={`group relative overflow-hidden rounded-2xl ${index === 0 ? 'col-span-2 row-span-2' : ''
+                  }`}
               >
                 <div
-                  className={`${
-                    index === 0 ? 'aspect-square' : 'aspect-[4/3]'
-                  }`}
+                  className={`${index === 0 ? 'aspect-square' : 'aspect-[4/3]'
+                    }`}
                 >
                   <img
                     src={image.src}

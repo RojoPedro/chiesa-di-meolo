@@ -32,7 +32,7 @@ export const massSchedules: MassSchedule[] = [
 export const confessionSchedules: ConfessionSchedule[] = [
   { id: '1', day: 'Mercoledì', time: '17:00 - 18:00', note: 'Prima della Messa' },
   { id: '2', day: 'Sabato', time: '17:00 - 18:00', note: 'Prima della Messa vespertina' },
-  { id: '3', day: 'Su appuntamento', time: 'Contattare la segreteria', note: 'Tel: 02 1234567' },
+  { id: '3', day: 'Su appuntamento', time: 'Contattare la segreteria', note: 'Tel: 0421 61025' },
 ];
 
 export const historyEvents: HistoryEvent[] = [
@@ -41,21 +41,21 @@ export const historyEvents: HistoryEvent[] = [
     year: 'V Secolo',
     title: 'Origini Antiche',
     description: 'La fondazione della pieve di Meolo risale al V secolo ad opera dei vescovi di Altino, rendendola una delle chiese più antiche del territorio veneziano.',
-    image: '/images/history-1.jpg',
+    image: '/images/secoloV.png',
   },
   {
     id: '2',
     year: '1146',
     title: 'Prima Menzione Documentata',
     description: 'Il 15 luglio 1146, il vescovo di Treviso Gregorio Giustiniani concede la pieve al Capitolo dei Canonici, sottraendola al diretto controllo vescovile.',
-    image: '/images/history-2.jpg',
+    image: '/images/chiesa-storica5.jpg',
   },
   {
     id: '3',
     year: 'XV Secolo',
     title: 'La Chiesa Attuale',
     description: 'Viene eretto l\'attuale edificio in stile romanico-rinascimentale a tre navate. La facciata in mattoni conserva ancora tracce di rifacimenti medievali e un rosone occluso.',
-    image: '/images/history-3.jpg',
+    image: '/images/chiesa-attuale.jpg',
   },
   {
     id: '4',
@@ -67,12 +67,12 @@ export const historyEvents: HistoryEvent[] = [
 ];
 
 export const galleryImages: GalleryImage[] = [
-  { id: '1', src: '/images/gallery-1.jpg', alt: 'Facciata della chiesa', caption: 'La facciata neoromanica' },
-  { id: '2', src: '/images/gallery-2.jpg', alt: 'Interno della chiesa', caption: 'Navata centrale' },
-  { id: '3', src: '/images/gallery-3.jpg', alt: 'Altare maggiore', caption: 'Altare maggiore' },
-  { id: '4', src: '/images/gallery-4.jpg', alt: 'Cappella del SS. Sacramento', caption: 'Cappella del SS. Sacramento' },
-  { id: '5', src: '/images/gallery-5.jpg', alt: 'Battistero', caption: 'Il battistero' },
-  { id: '6', src: '/images/gallery-6.jpg', alt: 'Campanile', caption: 'Il campanile' },
+  { id: '1', src: '/images/chiesa-storica1.jpg', alt: 'Facciata della chiesa', caption: 'La facciata in mattoni a vista' },
+  { id: '2', src: '/images/chiesa-storica2.jpg', alt: 'Interno della chiesa', caption: 'Navata centrale e presbiterio' },
+  { id: '3', src: '/images/chiesa-storica3.jpg', alt: 'Altare maggiore', caption: 'L\'altare con la pala di Matteo Ponzone' },
+  { id: '4', src: '/images/chiesa-storica4.jpg', alt: 'Campanile', caption: 'Il campanile rinascimentale' },
+  { id: '5', src: '/images/chiesa-storica5.jpg', alt: 'Affreschi del Tiepolo', caption: 'Dettaglio degli affreschi di Domenico Tiepolo' },
+  { id: '6', src: '/images/chiesa-storica6.jpg', alt: 'Organo', caption: 'L\'organo Hradetzky' },
 ];
 
 export const caritasActivities: CaritasActivity[] = [
@@ -175,8 +175,8 @@ export const downloadFiles: DownloadFile[] = [
 
 export const parishInfo = {
   name: 'Parrocchia di San Giovanni Battista',
-  address: 'Via Roma, 1 - 30020 Meolo (VE)',
-  phone: '0415 969055',
+  address: 'Piazza Pio X 6, 30020 Meolo (VE)',
+  phone: '0421 61025',
   email: 'meolo@diocesitv.it',
   pec: 'parrocchiasangiovanni-meolo@pec.it',
   hours: 'Lun-Ven: 9:00-12:00 / 15:00-18:00',

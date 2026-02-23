@@ -30,7 +30,7 @@ export function Footer({ onDonateClick }: FooterProps) {
               </div>
             </div>
             <p className="text-white/70 leading-relaxed mb-6">
-              Un luogo di fede, speranza e carità dal 1892.
+              Un luogo di fede, speranza e carità dal 1534.
               Ti aspettiamo nella nostra comunità.
             </p>
             <button
