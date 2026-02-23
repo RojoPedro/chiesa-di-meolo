@@ -76,8 +76,8 @@ export function HeroSection({ onDonateClick }: HeroSectionProps) {
 
           {/* Title */}
           <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white font-bold leading-tight mb-6">
-            Chiesa
-            <span className="block text-amber-400">San Giovanni Battista </span>
+            Chiesa di Meolo
+            <span className="block text-amber-400">San Giovanni Battista</span>
           </h1>
 
           {/* Subtitle */}
