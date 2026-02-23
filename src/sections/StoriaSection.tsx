@@ -45,11 +45,12 @@ export function StoriaSection() {
 
         {/* Timeline */}
         <div className="max-w-6xl mx-auto mb-24">
-          <div className="space-y-16">
+          {/* Mobile Carousel / Desktop Stack */}
+          <div className="flex lg:block overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory lg:snap-none pb-8 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0 space-x-6 lg:space-x-0 lg:space-y-16 no-scrollbar">
             {historyEvents.map((event, index) => (
               <div
                 key={event.id}
-                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                className={`flex-shrink-0 w-[85vw] lg:w-full snap-center grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                   }`}
               >
                 {/* Image */}
@@ -75,10 +76,10 @@ export function StoriaSection() {
                     <Calendar className="w-4 h-4" />
                     <span className="text-sm font-medium">{event.year}</span>
                   </div>
-                  <h3 className="font-serif text-3xl text-slate-800 font-bold mb-4">
+                  <h3 className="font-serif text-2xl lg:text-3xl text-slate-800 font-bold mb-4">
                     {event.title}
                   </h3>
-                  <p className="text-slate-600 text-lg leading-relaxed">
+                  <p className="text-slate-600 text-base lg:text-lg leading-relaxed">
                     {event.description}
                   </p>
                 </div>
@@ -98,16 +99,17 @@ export function StoriaSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {/* Mobile Carousel / Desktop Grid */}
+          <div className="flex lg:grid overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory lg:snap-none pb-8 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0 space-x-4 lg:space-x-0 lg:grid-cols-3 lg:gap-4 no-scrollbar">
             {galleryImages.map((image, index) => (
               <button
                 key={image.id}
                 onClick={() => openLightbox(index)}
-                className={`group relative overflow-hidden rounded-2xl ${index === 0 ? 'col-span-2 row-span-2' : ''
+                className={`group relative overflow-hidden rounded-2xl flex-shrink-0 w-[70vw] lg:w-full snap-center ${index === 0 ? 'lg:col-span-2 lg:row-span-2 lg:w-auto' : ''
                   }`}
               >
                 <div
-                  className={`${index === 0 ? 'aspect-square' : 'aspect-[4/3]'
+                  className={`${index === 0 ? 'aspect-square lg:aspect-square' : 'aspect-[4/3]'
                     }`}
                 >
                   <img
@@ -117,7 +119,7 @@ export function StoriaSection() {
                   />
                 </div>
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="text-white font-medium">{image.caption}</p>
                   </div>

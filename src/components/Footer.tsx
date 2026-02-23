@@ -43,7 +43,7 @@ export function Footer({ onDonateClick }: FooterProps) {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="hidden md:block">
             <h3 className="font-serif text-lg font-bold mb-6">Link Rapidi</h3>
             <ul className="space-y-3">
               {navItems.map((item) => (

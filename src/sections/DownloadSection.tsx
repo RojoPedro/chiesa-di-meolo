@@ -21,7 +21,7 @@ const categoryLabels: Record<Category, string> = {
 
 export function DownloadSection() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<Category>('all');
+  const [selectedCategory, setSelectedCategory] = useState<Category>('canti');
 
   const filteredFiles = downloadFiles.filter((file) => {
     const matchesSearch = file.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -42,17 +42,20 @@ export function DownloadSection() {
     <section id="download" className="py-24 bg-slate-50">
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-700 mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-12">
+          <div className="inline-flex lg:hidden items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-700 mb-4">
+            <Download className="w-4 h-4" />
+            <span className="text-sm font-medium">Download</span>
+          </div>
+          <div className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-700 mb-6">
             <Download className="w-4 h-4" />
             <span className="text-sm font-medium">Area Download</span>
           </div>
-          <h2 className="font-serif text-4xl sm:text-5xl text-slate-800 font-bold mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-800 font-bold mb-4 lg:mb-6">
             Documenti e Risorse
           </h2>
-          <p className="text-slate-600 text-lg leading-relaxed">
-            Scarica i documenti parrocchiali, i canti liturgici e i moduli necessari 
-            per le attività della comunità.
+          <p className="text-slate-600 text-base lg:text-lg leading-relaxed">
+            Scarica i documenti, i canti e i moduli della comunità.
           </p>
         </div>
 
@@ -78,11 +81,11 @@ export function DownloadSection() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-3 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                    selectedCategory === category
+                  className={`px-4 py-3 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-300 ${category === 'all' ? 'hidden sm:block' : ''
+                    } ${selectedCategory === category
                       ? 'bg-amber-500 text-white shadow-md'
                       : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-                  }`}
+                    }`}
                 >
                   {categoryLabels[category]}
                 </button>
@@ -96,29 +99,29 @@ export function DownloadSection() {
           <div className="space-y-4">
             {filteredFiles.map((file) => {
               const IconComponent = iconMap[file.type] || FileText;
-              
+
               return (
                 <div
                   key={file.id}
-                  className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100 hover:border-amber-200"
+                  className="group bg-white rounded-2xl p-4 lg:p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100 hover:border-amber-200"
                 >
-                  <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-3 lg:gap-6">
                     {/* Icon */}
-                    <div className="p-4 rounded-xl bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                      <IconComponent className="w-8 h-8" />
+                    <div className="p-3 lg:p-4 rounded-xl bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                      <IconComponent className="w-6 h-6 lg:w-8 h-8" />
                     </div>
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-slate-800 text-lg mb-1 truncate group-hover:text-amber-700 transition-colors">
+                      <h3 className="font-medium text-slate-800 text-base lg:text-lg mb-0.5 lg:mb-1 truncate group-hover:text-amber-700 transition-colors">
                         {file.title}
                       </h3>
-                      <div className="flex items-center gap-4 text-sm text-slate-500">
-                        <span className="uppercase font-medium text-xs bg-slate-100 px-2 py-1 rounded">
+                      <div className="flex items-center gap-2 lg:gap-4 text-xs lg:text-sm text-slate-500">
+                        <span className="uppercase font-medium text-[10px] lg:text-xs bg-slate-100 px-2 py-0.5 lg:py-1 rounded">
                           {file.type}
                         </span>
                         <span>{file.size}</span>
-                        <span>{formatDate(file.date)}</span>
+                        <span className="hidden sm:inline">{formatDate(file.date)}</span>
                       </div>
                     </div>
 
@@ -130,10 +133,11 @@ export function DownloadSection() {
                     >
                       <Button
                         variant="outline"
-                        className="rounded-full border-amber-500 text-amber-700 hover:bg-amber-50 hover:text-amber-800"
+                        size="sm"
+                        className="rounded-full border-amber-500 text-amber-700 hover:bg-amber-50 hover:text-amber-800 h-9 lg:h-10 px-3 lg:px-4"
                       >
-                        <Download className="w-4 h-4 mr-2" />
-                        Scarica
+                        <Download className="w-4 h-4 lg:mr-2" />
+                        <span className="hidden lg:inline">Scarica</span>
                       </Button>
                     </a>
                   </div>

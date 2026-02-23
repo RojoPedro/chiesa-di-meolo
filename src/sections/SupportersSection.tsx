@@ -122,7 +122,7 @@ export function SupportersSection() {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+                <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
                     {isLoading ? (
                         Array.from({ length: 4 }).map((_, i) => (
                             <div key={i} className="bg-white rounded-2xl p-6 text-center shadow-sm animate-pulse">

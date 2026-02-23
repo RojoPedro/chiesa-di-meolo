@@ -31,8 +31,8 @@ export function Header({ onDonateClick }: HeaderProps) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? 'bg-white/95 backdrop-blur-md shadow-lg py-3'
-        : 'bg-transparent py-5'
+        ? 'bg-white/95 backdrop-blur-md shadow-lg py-2 lg:py-3'
+        : 'bg-transparent py-3 lg:py-5'
         }`}
     >
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
@@ -47,12 +47,12 @@ export function Header({ onDonateClick }: HeaderProps) {
             className="flex items-center gap-3 group"
           >
             <div
-              className={`p-2 rounded-xl transition-all duration-300 ${isScrolled
+              className={`p-1.5 lg:p-2 rounded-xl transition-all duration-300 ${isScrolled
                 ? 'bg-amber-100 text-amber-700'
                 : 'bg-white/20 text-white backdrop-blur-sm'
                 }`}
             >
-              <Church className="w-6 h-6" />
+              <Church className="w-5 h-5 lg:w-6 h-6" />
             </div>
             <div className="hidden sm:block">
               <span

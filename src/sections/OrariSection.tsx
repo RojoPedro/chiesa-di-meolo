@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { massSchedules, confessionSchedules } from '@/data/mockData';
 import { Calendar, Clock, Info, BookOpen } from 'lucide-react';
 
 export function OrariSection() {
+  const [activeTab, setActiveTab] = useState<'ferial' | 'festive'>('ferial');
+
   const feriali = massSchedules.filter((m) => m.type === 'ferial');
   const festivi = massSchedules.filter((m) => m.type === 'festive');
   const speciali = massSchedules.filter((m) => m.type === 'special');
@@ -24,10 +27,34 @@ export function OrariSection() {
           </p>
         </div>
 
+        {/* Mobile Tabs Switcher */}
+        <div className="flex lg:hidden bg-slate-100 p-1.5 rounded-2xl mb-8 max-w-sm mx-auto">
+          <button
+            onClick={() => setActiveTab('ferial')}
+            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-medium transition-all ${activeTab === 'ferial'
+                ? 'bg-white text-amber-700 shadow-sm'
+                : 'text-slate-500 hover:text-slate-700'
+              }`}
+          >
+            <Clock className="w-4 h-4" />
+            Feriali
+          </button>
+          <button
+            onClick={() => setActiveTab('festive')}
+            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-medium transition-all ${activeTab === 'festive'
+                ? 'bg-white text-amber-700 shadow-sm'
+                : 'text-slate-500 hover:text-slate-700'
+              }`}
+          >
+            <Calendar className="w-4 h-4" />
+            Festive
+          </button>
+        </div>
+
         {/* Tables Grid */}
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Messe Feriali */}
-          <div className="bg-slate-50 rounded-3xl p-8">
+          <div className={`bg-slate-50 rounded-3xl p-6 lg:p-8 ${activeTab !== 'ferial' ? 'hidden lg:block' : 'block'}`}>
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 rounded-xl bg-amber-100 text-amber-700">
                 <Clock className="w-6 h-6" />
@@ -61,7 +88,7 @@ export function OrariSection() {
           </div>
 
           {/* Messe Festive */}
-          <div className="bg-slate-50 rounded-3xl p-8">
+          <div className={`bg-slate-50 rounded-3xl p-6 lg:p-8 ${activeTab !== 'festive' ? 'hidden lg:block' : 'block'}`}>
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 rounded-xl bg-amber-100 text-amber-700">
                 <Calendar className="w-6 h-6" />

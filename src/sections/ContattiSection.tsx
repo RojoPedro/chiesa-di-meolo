@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { parishInfo } from '@/data/mockData';
-import { MapPin, Phone, Mail, Clock, User, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, User, Send, CheckCircle, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { supabase } from '@/lib/supabase';
 
 export function ContattiSection() {
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,14 +18,54 @@ export function ContattiSection() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simula invio form
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
+    setIsLoading(true);
+
+    try {
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message,
+          },
+        ]);
+
+      if (error) throw error;
+
+      // Trigger email notification
+      try {
+        await supabase.functions.invoke('send-contact-email', {
+          body: {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message,
+          },
+        });
+      } catch (emailError) {
+        // We log but don't stop the flow since the message is already saved in the DB
+        console.error('Email notification failed:', emailError);
+      }
+
+      setIsSubmitted(true);
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    }, 3000);
+
+      // Auto-reset success message after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Si è verificato un errore nell\'invio del messaggio. Riprova più tardi.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (
@@ -57,33 +99,33 @@ export function ContattiSection() {
           {/* Contact Info */}
           <div>
             {/* Info Cards */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              <div className="bg-slate-50 rounded-2xl p-6">
-                <div className="p-3 rounded-xl bg-amber-100 text-amber-700 w-fit mb-4">
-                  <MapPin className="w-6 h-6" />
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="bg-slate-50 rounded-2xl p-4 lg:p-6">
+                <div className="p-2 lg:p-3 rounded-xl bg-amber-100 text-amber-700 w-fit mb-3 lg:mb-4">
+                  <MapPin className="w-5 h-5 lg:w-6 h-6" />
                 </div>
                 <h3 className="font-medium text-slate-800 mb-2">Indirizzo</h3>
                 <p className="text-slate-600 text-sm">{parishInfo.address}</p>
               </div>
 
-              <div className="bg-slate-50 rounded-2xl p-6">
-                <div className="p-3 rounded-xl bg-amber-100 text-amber-700 w-fit mb-4">
+              <div className="bg-slate-50 rounded-2xl p-4 lg:p-6">
+                <div className="p-2 lg:p-3 rounded-xl bg-amber-100 text-amber-700 w-fit mb-3 lg:mb-4">
                   <Phone className="w-6 h-6" />
                 </div>
                 <h3 className="font-medium text-slate-800 mb-2">Telefono</h3>
                 <p className="text-slate-600 text-sm">{parishInfo.phone}</p>
               </div>
 
-              <div className="bg-slate-50 rounded-2xl p-6">
-                <div className="p-3 rounded-xl bg-amber-100 text-amber-700 w-fit mb-4">
+              <div className="bg-slate-50 rounded-2xl p-4 lg:p-6">
+                <div className="p-2 lg:p-3 rounded-xl bg-amber-100 text-amber-700 w-fit mb-3 lg:mb-4">
                   <Mail className="w-6 h-6" />
                 </div>
                 <h3 className="font-medium text-slate-800 mb-2">Email</h3>
                 <p className="text-slate-600 text-sm">{parishInfo.email}</p>
               </div>
 
-              <div className="bg-slate-50 rounded-2xl p-6">
-                <div className="p-3 rounded-xl bg-amber-100 text-amber-700 w-fit mb-4">
+              <div className="bg-slate-50 rounded-2xl p-4 lg:p-6">
+                <div className="p-2 lg:p-3 rounded-xl bg-amber-100 text-amber-700 w-fit mb-3 lg:mb-4">
                   <Clock className="w-6 h-6" />
                 </div>
                 <h3 className="font-medium text-slate-800 mb-2">Orari Segreteria</h3>
@@ -127,7 +169,7 @@ export function ContattiSection() {
 
           {/* Contact Form */}
           <div className="bg-slate-50 rounded-3xl p-8">
-            <h3 className="font-serif text-2xl text-slate-800 font-bold mb-6">
+            <h3 id="contact-form" className="font-serif text-2xl text-slate-800 font-bold mb-6">
               Scrivici un Messaggio
             </h3>
 
@@ -140,7 +182,7 @@ export function ContattiSection() {
                   Messaggio Inviato!
                 </h4>
                 <p className="text-slate-600">
-                  Ti risponderemo al più presto.
+                  Ti risponderemo al più presto sulla tua email.
                 </p>
               </div>
             ) : (
@@ -216,10 +258,15 @@ export function ContattiSection() {
 
                 <Button
                   type="submit"
+                  disabled={isLoading}
                   className="w-full bg-amber-600 hover:bg-amber-700 text-white rounded-xl py-6 text-lg font-medium"
                 >
-                  <Send className="w-5 h-5 mr-2" />
-                  Invia Messaggio
+                  {isLoading ? (
+                    <RefreshCw className="w-5 h-5 mr-2 animate-spin" />
+                  ) : (
+                    <Send className="w-5 h-5 mr-2" />
+                  )}
+                  {isLoading ? 'Invio in corso...' : 'Invia Messaggio'}
                 </Button>
 
                 <p className="text-slate-500 text-sm text-center">

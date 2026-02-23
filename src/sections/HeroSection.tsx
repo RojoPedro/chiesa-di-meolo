@@ -66,7 +66,7 @@ export function HeroSection({ onDonateClick }: HeroSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-12 xl:px-20 py-32">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-12 xl:px-20 py-20 lg:py-32">
         <div className="max-w-4xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
