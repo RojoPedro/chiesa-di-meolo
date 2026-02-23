@@ -18,15 +18,13 @@ export const navItems: NavItem[] = [
 ];
 
 export const massSchedules: MassSchedule[] = [
-  { id: '1', day: 'Lunedì - Venerdì', time: '08:00', type: 'ferial', note: 'Cappella laterale' },
-  { id: '2', day: 'Lunedì - Venerdì', time: '18:30', type: 'ferial' },
-  { id: '3', day: 'Sabato', time: '08:00', type: 'ferial' },
-  { id: '4', day: 'Sabato', time: '18:30', type: 'festive', note: 'Messa vespertina' },
-  { id: '5', day: 'Domenica', time: '08:00', type: 'festive' },
-  { id: '6', day: 'Domenica', time: '10:00', type: 'festive', note: 'Messa delle famiglie' },
-  { id: '7', day: 'Domenica', time: '11:30', type: 'festive' },
-  { id: '8', day: 'Domenica', time: '18:30', type: 'festive' },
-  { id: '9', day: 'Festivi prefestivi', time: '19:00', type: 'special', note: 'Orario estivo' },
+  { id: '1', day: 'Lunedì', time: '18:30', type: 'ferial' },
+  { id: '2', day: 'Mercoledì', time: '08:30', type: 'ferial' },
+  { id: '3', day: 'Venerdì', time: '18:30', type: 'ferial' },
+  { id: '4', day: 'Sabato', time: '19:00', type: 'ferial' },
+  { id: '5', day: 'Domenica', time: '07:30', type: 'festive' },
+  { id: '6', day: 'Domenica', time: '09:30', type: 'festive' },
+  { id: '7', day: 'Domenica', time: '19:00', type: 'festive' },
 ];
 
 export const confessionSchedules: ConfessionSchedule[] = [

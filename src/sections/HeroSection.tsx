@@ -56,7 +56,7 @@ export function HeroSection({ onDonateClick }: HeroSectionProps) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero-bg.jpg"
+          src="/images/hero-bg1.jpg"
           alt="Chiesa"
           className="w-full h-full object-cover"
         />

@@ -19,7 +19,7 @@ export function OrariSection() {
             Orari delle Messe
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed">
-            Partecipa alla celebrazione eucaristica. Ti aspettiamo per vivere insieme 
+            Partecipa alla celebrazione eucaristica. Ti aspettiamo per vivere insieme
             la bellezza della fede nella nostra comunità parrocchiale.
           </p>
         </div>
@@ -155,7 +155,7 @@ export function OrariSection() {
             <div className="mt-6 flex items-start gap-3 p-4 bg-amber-100/50 rounded-xl">
               <Info className="w-5 h-5 text-amber-700 mt-0.5 flex-shrink-0" />
               <p className="text-slate-700 text-sm">
-                Per confessioni fuori dagli orari indicati, è possibile concordare un appuntamento 
+                Per confessioni fuori dagli orari indicati, è possibile concordare un appuntamento
                 contattando direttamente il parroco o la segreteria parrocchiale.
               </p>
             </div>
