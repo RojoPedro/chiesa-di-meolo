@@ -5,7 +5,6 @@ import type {
   HistoryEvent,
   CaritasActivity,
   DownloadFile,
-  Supporter,
   NavItem,
 } from '@/types';
 
@@ -39,30 +38,30 @@ export const confessionSchedules: ConfessionSchedule[] = [
 export const historyEvents: HistoryEvent[] = [
   {
     id: '1',
-    year: '1892',
-    title: 'Fondazione della Parrocchia',
-    description: 'La Parrocchia di San Giovanni Battista venne fondata il 15 marzo 1892 per volere del Vescovo di Treviso. La prima chiesa era una piccola cappella in legno che accoglieva le famiglie contadine della zona di Meolo.',
+    year: 'V Secolo',
+    title: 'Origini Antiche',
+    description: 'La fondazione della pieve di Meolo risale al V secolo ad opera dei vescovi di Altino, rendendola una delle chiese più antiche del territorio veneziano.',
     image: '/images/history-1.jpg',
   },
   {
     id: '2',
-    year: '1925',
-    title: 'Costruzione della Chiesa Attuale',
-    description: 'Grazie alla generosità dei parrocchiani e alla dedizione del parroco Don Luigi Rossi, venne inaugurata la nuova chiesa in stile neoclassico, con la sua imponente facciata e il campanile alto 40 metri.',
+    year: '1146',
+    title: 'Prima Menzione Documentata',
+    description: 'Il 15 luglio 1146, il vescovo di Treviso Gregorio Giustiniani concede la pieve al Capitolo dei Canonici, sottraendola al diretto controllo vescovile.',
     image: '/images/history-2.jpg',
   },
   {
     id: '3',
-    year: '1965',
-    title: 'Il Concilio e le Riforme',
-    description: 'Con il Concilio Vaticano II, la parrocchia si adeguò alle nuove disposizioni liturgiche. Venne installato l\'altare rivolto verso il popolo e si avviarono i primi gruppi di catechesi per giovani e adulti.',
+    year: 'XV Secolo',
+    title: 'La Chiesa Attuale',
+    description: 'Viene eretto l\'attuale edificio in stile romanico-rinascimentale a tre navate. La facciata in mattoni conserva ancora tracce di rifacimenti medievali e un rosone occluso.',
     image: '/images/history-3.jpg',
   },
   {
     id: '4',
-    year: '2000',
-    title: 'Restauro e Rinnovamento',
-    description: 'Nel Giubileo del 2000, la chiesa fu oggetto di un importante restauro conservativo che ne ha valorizzato gli affreschi e gli arredi sacri. Contemporaneamente si è sviluppata l\'attività caritativa verso i più bisognosi.',
+    year: '1758',
+    title: 'Il Genio dei Tiepolo',
+    description: 'Domenico Tiepolo, figlio di Giambattista, decora la volta del presbiterio con un mirabile ciclo di affreschi raffiguranti il Battesimo di Gesù e i quattro Evangelisti.',
     image: '/images/history-4.jpg',
   },
 ];
@@ -79,35 +78,19 @@ export const galleryImages: GalleryImage[] = [
 export const caritasActivities: CaritasActivity[] = [
   {
     id: '1',
-    title: 'Emporio Solidale',
-    description: 'Distribuzione di generi alimentari e prodotti di prima necessità a famiglie in difficoltà economica. Operiamo con dignità e rispetto per ogni persona.',
-    icon: 'shopping-basket',
-    howToJoin: 'Presentarsi in segreteria il martedì e giovedì dalle 9:00 alle 12:00 con documento di identità e ISEE.',
-    contact: 'emporio@parrocchiasangiovannibattista.it',
-  },
-  {
-    id: '2',
-    title: 'Mensa dei Poveri',
-    description: 'Ogni giovedì sera serviamo un pasto caldo a circa 80 persone senza dimora o in situazione di grave marginalità.',
-    icon: 'utensils',
-    howToJoin: 'Cerciamo volontari per cucinare, servire e accogliere. Età minima 18 anni.',
-    contact: 'mensa@parrocchiasangiovannibattista.it',
-  },
-  {
-    id: '3',
     title: 'Sportello Ascolto',
     description: 'Ascolto professionale e orientamento per chi vive situazioni di disagio psicologico, familiare o sociale.',
     icon: 'heart-handshake',
     howToJoin: 'Su appuntamento chiamando il numero 02 1234567 nei giorni feriali.',
-    contact: 'ascolto@parrocchiasangiovannibattista.it',
+    contact: 'meolo@diocesitv.it',
   },
   {
-    id: '4',
+    id: '2',
     title: 'Gruppo Giovani',
     description: 'Incontri settimanali per ragazzi e giovani adulti per crescere nella fede e nel servizio alla comunità.',
     icon: 'users',
     howToJoin: 'Gli incontri sono il venerdì alle 21:00 nel oratorio. Aperto a tutti i ragazzi dai 14 ai 25 anni.',
-    contact: 'giovani@parrocchiasangiovannibattista.it',
+    contact: 'meolo@diocesitv.it',
   },
 ];
 
@@ -177,30 +160,30 @@ export const downloadFiles: DownloadFile[] = [
   },
 ];
 
-export const supporters: Supporter[] = [
-  { id: '1', name: 'Mario Rossi', amount: 100, method: 'card', date: '2025-02-20', isAnonymous: false },
-  { id: '2', name: null, amount: 50, method: 'paypal', date: '2025-02-18', isAnonymous: true },
-  { id: '3', name: 'Famiglia Bianchi', amount: 200, method: 'bank', date: '2025-02-15', isAnonymous: false },
-  { id: '4', name: 'Giuseppe Verdi', amount: 30, method: 'card', date: '2025-02-12', isAnonymous: false },
-  { id: '5', name: null, amount: 150, method: 'bank', date: '2025-02-10', isAnonymous: true },
-  { id: '6', name: 'Anna Maria Colombo', amount: 75, method: 'paypal', date: '2025-02-08', isAnonymous: false },
-  { id: '7', name: 'Comitato Feste', amount: 500, method: 'bank', date: '2025-02-05', isAnonymous: false },
-  { id: '8', name: null, amount: 25, method: 'card', date: '2025-02-03', isAnonymous: true },
-  { id: '9', name: 'Luca e Sara', amount: 120, method: 'card', date: '2025-02-01', isAnonymous: false },
-  { id: '10', name: 'Azienda Edile Rossi Srl', amount: 1000, method: 'bank', date: '2025-01-28', isAnonymous: false },
-];
+// export const supporters: Supporter[] = [
+//   { id: '1', name: 'Mario Rossi', amount: 100, method: 'card', date: '2025-02-20', isAnonymous: false },
+//   { id: '2', name: null, amount: 50, method: 'paypal', date: '2025-02-18', isAnonymous: true },
+//   { id: '3', name: 'Famiglia Bianchi', amount: 200, method: 'bank', date: '2025-02-15', isAnonymous: false },
+//   { id: '4', name: 'Giuseppe Verdi', amount: 30, method: 'card', date: '2025-02-12', isAnonymous: false },
+//   { id: '5', name: null, amount: 150, method: 'bank', date: '2025-02-10', isAnonymous: true },
+//   { id: '6', name: 'Anna Maria Colombo', amount: 75, method: 'paypal', date: '2025-02-08', isAnonymous: false },
+//   { id: '7', name: 'Comitato Feste', amount: 500, method: 'bank', date: '2025-02-05', isAnonymous: false },
+//   { id: '8', name: null, amount: 25, method: 'card', date: '2025-02-03', isAnonymous: true },
+//   { id: '9', name: 'Luca e Sara', amount: 120, method: 'card', date: '2025-02-01', isAnonymous: false },
+//   { id: '10', name: 'Azienda Edile Rossi Srl', amount: 1000, method: 'bank', date: '2025-01-28', isAnonymous: false },
+// ];
 
 export const parishInfo = {
   name: 'Parrocchia di San Giovanni Battista',
   address: 'Via Roma, 1 - 30020 Meolo (VE)',
   phone: '0415 969055',
-  email: 'info@parrocchiasangiovannibattista.it',
+  email: 'meolo@diocesitv.it',
   pec: 'parrocchiasangiovanni-meolo@pec.it',
   hours: 'Lun-Ven: 9:00-12:00 / 15:00-18:00',
-  priest: 'Don Marco Bianchi',
+  priest: 'Rev. Roberto Mistrorigo',
   vicePriest: 'Don Andrea Rossi',
   coordinates: {
-    lat: 45.6122,
-    lng: 12.4381,
+    lat: 45.62163164844248,
+    lng: 12.451641728923748,
   },
 };

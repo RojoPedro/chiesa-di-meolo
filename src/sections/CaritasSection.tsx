@@ -1,10 +1,8 @@
 import { caritasActivities } from '@/data/mockData';
-import { Heart, ShoppingBasket, Utensils, Users, HeartHandshake, Mail, ArrowRight } from 'lucide-react';
+import { Heart, HeartHandshake, Users, Mail, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const iconMap: Record<string, React.ElementType> = {
-  'shopping-basket': ShoppingBasket,
-  'utensils': Utensils,
   'heart-handshake': HeartHandshake,
   'users': Users,
 };
@@ -23,7 +21,7 @@ export function CaritasSection() {
             Metti il Tuo Cuore in Azione
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed">
-            La carità è il cuore della nostra comunità. Scopri come puoi contribuire 
+            La carità è il cuore della nostra comunità. Scopri come puoi contribuire
             al bene comune attraverso il volontariato o richiedendo supporto.
           </p>
         </div>
@@ -32,7 +30,7 @@ export function CaritasSection() {
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {caritasActivities.map((activity) => {
             const IconComponent = iconMap[activity.icon] || Heart;
-            
+
             return (
               <div
                 key={activity.id}
@@ -83,7 +81,7 @@ export function CaritasSection() {
               Vuoi Diventare Volontario?
             </h3>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Il tuo tempo è il dono più prezioso. Unisciti alla nostra équipe di volontari 
+              Il tuo tempo è il dono più prezioso. Unisciti alla nostra équipe di volontari
               e metti le tue competenze al servizio dei più bisognosi.
             </p>
             <Button
