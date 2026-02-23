@@ -65,12 +65,12 @@ export const historyEvents: HistoryEvent[] = [
 ];
 
 export const galleryImages: GalleryImage[] = [
-  { id: '1', src: '/images/chiesa-storica1.jpg', alt: 'Facciata della chiesa', caption: 'La facciata in mattoni a vista' },
-  { id: '2', src: '/images/chiesa-storica2.jpg', alt: 'Interno della chiesa', caption: 'Navata centrale e presbiterio' },
-  { id: '3', src: '/images/chiesa-storica3.jpg', alt: 'Altare maggiore', caption: 'L\'altare con la pala di Matteo Ponzone' },
-  { id: '4', src: '/images/chiesa-storica4.jpg', alt: 'Campanile', caption: 'Il campanile rinascimentale' },
-  { id: '5', src: '/images/chiesa-storica5.jpg', alt: 'Affreschi del Tiepolo', caption: 'Dettaglio degli affreschi di Domenico Tiepolo' },
-  { id: '6', src: '/images/chiesa-storica6.jpg', alt: 'Organo', caption: 'L\'organo Hradetzky' },
+  { id: '1', src: '/images/chiesa-storica1.jpg', alt: 'Guglia del campanile', caption: 'Dettaglio della guglia pre-restauro' },
+  { id: '2', src: '/images/chiesa-storica2.jpg', alt: 'Affresco danneggiato', caption: 'Frammento di affresco danneggiato' },
+  { id: '3', src: '/images/chiesa-storica3.jpg', alt: 'San Matteo con angelo', caption: 'Dettaglio di San Matteo con l\'angelo' },
+  { id: '4', src: '/images/chiesa-storica4.jpg', alt: 'Evangelista fra le nuvole', caption: 'Affresco dell\'evangelista fra le nuvole' },
+  { id: '5', src: '/images/chiesa-storica5.jpg', alt: 'Cantiere di restauro', caption: 'Cantiere di restauro post-bellico' },
+  { id: '6', src: '/images/chiesa-storica6.jpg', alt: 'Frammento crollato', caption: 'Frammento di soffitto crollato' },
 ];
 
 export const caritasActivities: CaritasActivity[] = [
